@@ -1,4 +1,4 @@
-package com.cso.habbittracker.ui.theme
+package com.cso.habittracker.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun HabbitTrackerTheme(
+fun HabitTrackerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

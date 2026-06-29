@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HabbitTracker"
+rootProject.name = "HabitTracker"
 include(":app")
  

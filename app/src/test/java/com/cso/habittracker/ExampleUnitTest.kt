@@ -1,4 +1,4 @@
-package com.cso.habbittracker
+package com.cso.habittracker
 
 import org.junit.Test
 
