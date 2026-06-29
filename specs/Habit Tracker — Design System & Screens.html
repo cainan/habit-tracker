@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:55000/ -->
+<html lang="en"><script type="text/javascript" src="chrome-extension://nomnoimacbncclfbnfaingniikblfbji/build/scripts/installDetector.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker — Design System &amp; Screens</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', system-ui, sans-serif; padding: 40px 20px; }
+
+  h1 { font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  h2 { font-family: 'Manrope', sans-serif; font-size: 22px; font-weight: 700; color: #fff; margin: 48px 0 16px; border-bottom: 1px solid #222; padding-bottom: 8px; }
+  h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #ccc; margin: 24px 0 12px; }
+  p.sub { font-size: 14px; color: #888; margin-bottom: 32px; }
+
+  .section { max-width: 900px; margin: 0 auto; }
+
+  /* Color swatches */
+  .palette { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+  .swatch { width: 120px; border-radius: 12px; overflow: hidden; }
+  .swatch-color { height: 64px; }
+  .swatch-info { background: #1E1E2E; padding: 8px 10px; }
+  .swatch-name { font-size: 12px; font-weight: 600; color: #fff; }
+  .swatch-hex { font-size: 11px; color: #888; font-family: monospace; }
+
+  /* Font samples */
+  .font-sample { background: #1E1E2E; border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+  .font-sample .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+  /* Icon grid */
+  .icon-grid { display: grid; grid-template-columns: repeat(5, 64px); gap: 12px; }
+  .icon-cell { width: 64px; height: 64px; background: #1E1E2E; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 2px; }
+  .icon-cell svg { width: 28px; height: 28px; }
+  .icon-label { font-size: 8px; color: #888; text-align: center; margin-top: 4px; }
+
+  /* Phone frame */
+  .phone-row { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin: 24px 0; }
+  .phone { width: 375px; border-radius: 32px; border: 3px solid #2a2a3a; overflow: hidden; background: #121218; flex-shrink: 0; }
+  .phone-label { text-align: center; font-size: 13px; color: #888; margin-bottom: 8px; font-weight: 500; }
+  .phone-container { text-align: center; }
+  .phone-screen { font-family: 'Inter', sans-serif; color: #e0e0e0; overflow-y: auto; text-align: left; }
+</style>
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style></head>
+<body>
+<div class="section">
+
+<h1>Habit Tracker — Design System</h1>
+<p class="sub">Electric Purple palette. Dark theme only. Bold &amp; colorful.</p>
+
+<!-- ========== COLOR PALETTE ========== -->
+<h2>Color Palette</h2>
+
+<h3>Backgrounds</h3>
+<div class="palette">
+  <div class="swatch"><div class="swatch-color" style="background:#0F0F15;"></div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#0F0F15</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#1A1A2E;"></div><div class="swatch-info"><div class="swatch-name">Surface</div><div class="swatch-hex">#1A1A2E</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#252540;"></div><div class="swatch-info"><div class="swatch-name">Surface Elevated</div><div class="swatch-hex">#252540</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#2E2E4A;"></div><div class="swatch-info"><div class="swatch-name">Surface Bright</div><div class="swatch-hex">#2E2E4A</div></div></div>
+</div>
+
+<h3>Brand</h3>
+<div class="palette">
+  <div class="swatch"><div class="swatch-color" style="background:#6C63FF;"></div><div class="swatch-info"><div class="swatch-name">Primary</div><div class="swatch-hex">#6C63FF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#A855F7;"></div><div class="swatch-info"><div class="swatch-name">Secondary</div><div class="swatch-hex">#A855F7</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#8B7BFF;"></div><div class="swatch-info"><div class="swatch-name">Primary Light</div><div class="swatch-hex">#8B7BFF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#4A42CC;"></div><div class="swatch-info"><div class="swatch-name">Primary Dark</div><div class="swatch-hex">#4A42CC</div></div></div>
+</div>
+
+<h3>Semantic</h3>
+<div class="palette">
+  <div class="swatch"><div class="swatch-color" style="background:#34D399;"></div><div class="swatch-info"><div class="swatch-name">Success / Done</div><div class="swatch-hex">#34D399</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#F59E0B;"></div><div class="swatch-info"><div class="swatch-name">Streak / Amber</div><div class="swatch-hex">#F59E0B</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#F472B6;"></div><div class="swatch-info"><div class="swatch-name">Accent / Pink</div><div class="swatch-hex">#F472B6</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#EF4444;"></div><div class="swatch-info"><div class="swatch-name">Destructive</div><div class="swatch-hex">#EF4444</div></div></div>
+</div>
+
+<h3>Text</h3>
+<div class="palette">
+  <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;"></div><div class="swatch-info"><div class="swatch-name">Text Primary</div><div class="swatch-hex">#FFFFFF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#B0B0C0;"></div><div class="swatch-info"><div class="swatch-name">Text Secondary</div><div class="swatch-hex">#B0B0C0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#666680;"></div><div class="swatch-info"><div class="swatch-name">Text Tertiary</div><div class="swatch-hex">#666680</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#333350;"></div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#333350</div></div></div>
+</div>
+
+<h3>Day Picker (distinct from CTA)</h3>
+<div class="palette">
+  <div class="swatch"><div class="swatch-color" style="background:#2E2E4A;border:2px solid #6C63FF;border-radius:12px 12px 0 0;"></div><div class="swatch-info"><div class="swatch-name">Day Selected</div><div class="swatch-hex">#2E2E4A + border</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#1A1A2E;border:1px solid #333350;border-radius:12px 12px 0 0;"></div><div class="swatch-info"><div class="swatch-name">Day Unselected</div><div class="swatch-hex">#1A1A2E</div></div></div>
+</div>
+
+<!-- ========== TYPOGRAPHY ========== -->
+<h2>Typography</h2>
+
+<div class="font-sample">
+  <div class="label">Display — Manrope 800</div>
+  <div style="font-family:&#39;Manrope&#39;,sans-serif;font-weight:800;font-size:28px;color:#fff;">Today</div>
+</div>
+<div class="font-sample">
+  <div class="label">Heading — Inter 700</div>
+  <div style="font-family:&#39;Inter&#39;,sans-serif;font-weight:700;font-size:20px;color:#fff;">Statistics</div>
+</div>
+<div class="font-sample">
+  <div class="label">Title — Inter 600</div>
+  <div style="font-family:&#39;Inter&#39;,sans-serif;font-weight:600;font-size:16px;color:#fff;">Morning Run</div>
+</div>
+<div class="font-sample">
+  <div class="label">Body — Inter 400</div>
+  <div style="font-family:&#39;Inter&#39;,sans-serif;font-weight:400;font-size:14px;color:#B0B0C0;">5 day streak</div>
+</div>
+<div class="font-sample">
+  <div class="label">Caption — Inter 500</div>
+  <div style="font-family:&#39;Inter&#39;,sans-serif;font-weight:500;font-size:11px;color:#666680;text-transform:uppercase;letter-spacing:1px;">Repeat on</div>
+</div>
+<div class="font-sample">
+  <div class="label">Stat Number — Manrope 800</div>
+  <div style="font-family:&#39;Manrope&#39;,sans-serif;font-weight:800;font-size:28px;color:#A855F7;">87%</div>
+</div>
+
+<p style="font-size:13px;color:#888;margin-top:12px;">
+  <strong style="color:#B0B0C0;">Android implementation:</strong> Manrope for display/stat numbers, Inter for everything else. Both available as Google Fonts and can be bundled via Compose <code style="color:#A855F7;">FontFamily</code>.
+</p>
+
+<!-- ========== ICON LIBRARY ========== -->
+<h2>Habit Icon Library</h2>
+<p style="font-size:13px;color:#888;margin-bottom:16px;">20 icons available for habit selection. Rendered as SVGs, will be Material/custom vector drawables in the app.</p>
+
+<div class="icon-grid">
+  <!-- Row 1 -->
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M7 21L12 5l3 8 3-8 5 16" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    <div class="icon-label">Run</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="2.5" stroke="#A855F7" stroke-width="2"></rect><line x1="9" y1="9" x2="19" y2="9" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="13" x2="19" y2="13" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="17" x2="15" y2="17" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Read</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M14 4c0 0-7 7-7 12a7 7 0 0014 0c0-5-7-12-7-12z" stroke="#A855F7" stroke-width="2"></path></svg>
+    <div class="icon-label">Water</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#A855F7" stroke-width="2"></circle><circle cx="14" cy="14" r="3" fill="#A855F7"></circle></svg>
+    <div class="icon-label">Meditate</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="12" r="7" stroke="#A855F7" stroke-width="2"></circle><path d="M14 5v7l4 3" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M8 22h12" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path></svg>
+    <div class="icon-label">Sleep</div>
+  </div>
+  <!-- Row 2 -->
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="#A855F7" stroke-width="2"></rect><line x1="4" y1="12" x2="24" y2="12" stroke="#A855F7" stroke-width="1.5"></line><rect x="8" y="15" width="5" height="3" rx="1" stroke="#A855F7" stroke-width="1.2"></rect></svg>
+    <div class="icon-label">Code</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="9" cy="19" r="4" stroke="#A855F7" stroke-width="2"></circle><circle cx="19" cy="17" r="4" stroke="#A855F7" stroke-width="2"></circle><path d="M13 19V7l10-2v12" stroke="#A855F7" stroke-width="2"></path></svg>
+    <div class="icon-label">Music</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M8 22V12l6-6 6 6v10" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="11" y="16" width="6" height="6" rx="1" stroke="#A855F7" stroke-width="1.5"></rect></svg>
+    <div class="icon-label">Cook</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M6 22L6 8c0-1.1.9-2 2-2h12a2 2 0 012 2v14" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><line x1="10" y1="10" x2="18" y2="10" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="10" y1="14" x2="16" y2="14" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Journal</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><rect x="9" y="4" width="10" height="6" rx="1.5" stroke="#A855F7" stroke-width="2"></rect><line x1="14" y1="10" x2="14" y2="16" stroke="#A855F7" stroke-width="2.5"></line><line x1="8" y1="16" x2="20" y2="16" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="10" y1="16" x2="8" y2="23" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="18" y1="16" x2="20" y2="23" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Gym</div>
+  </div>
+  <!-- Row 3 -->
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="6" stroke="#A855F7" stroke-width="2"></circle><path d="M8 22c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path></svg>
+    <div class="icon-label">Yoga</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M6 20L14 6l8 14" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><line x1="9" y1="16" x2="19" y2="16" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Walk</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="18" r="6" stroke="#A855F7" stroke-width="2"></circle><circle cx="14" cy="18" r="2" fill="#A855F7"></circle><line x1="14" y1="12" x2="14" y2="6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="11" y1="7" x2="17" y2="5" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Cycle</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M5 7h18v2H5z" fill="#A855F7"></path><rect x="5" y="9" width="18" height="14" rx="1.5" stroke="#A855F7" stroke-width="2"></rect><line x1="10" y1="14" x2="10" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="14" y1="14" x2="14" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="18" y1="14" x2="18" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="10" y1="19" x2="10" y2="19.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="14" y1="19" x2="14" y2="19.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line></svg>
+    <div class="icon-label">Study</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><rect x="6" y="10" width="16" height="12" rx="2" stroke="#A855F7" stroke-width="2"></rect><path d="M10 10V8a4 4 0 018 0v2" stroke="#A855F7" stroke-width="2"></path><circle cx="14" cy="16" r="2" fill="#A855F7"></circle></svg>
+    <div class="icon-label">No Phone</div>
+  </div>
+  <!-- Row 4 -->
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="12" r="4" stroke="#A855F7" stroke-width="2"></circle><path d="M14 16v6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M10 24h8" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M7 8l2 2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path><path d="M21 8l-2 2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path><path d="M14 4v2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path></svg>
+    <div class="icon-label">Vitamins</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M14 5C8 5 4 10 4 14s4 9 10 9 10-5 10-9S20 5 14 5z" stroke="#A855F7" stroke-width="2"></path><path d="M14 5c-2 3-3 6-3 9s1 6 3 9" stroke="#A855F7" stroke-width="1.5"></path><path d="M14 5c2 3 3 6 3 9s-1 6-3 9" stroke="#A855F7" stroke-width="1.5"></path><line x1="5" y1="14" x2="23" y2="14" stroke="#A855F7" stroke-width="1.5"></line></svg>
+    <div class="icon-label">Language</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M14 6l2.5 5 5.5.8-4 3.9.9 5.3-4.9-2.6-4.9 2.6.9-5.3-4-3.9 5.5-.8z" stroke="#A855F7" stroke-width="2" stroke-linejoin="round"></path></svg>
+    <div class="icon-label">Gratitude</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><path d="M14 24s-8-4.5-8-11V7l8-3 8 3v6c0 6.5-8 11-8 11z" stroke="#A855F7" stroke-width="2" stroke-linejoin="round"></path></svg>
+    <div class="icon-label">Health</div>
+  </div>
+  <div class="icon-cell">
+    <svg viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="15" y="4" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="4" y="15" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="15" y="15" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect></svg>
+    <div class="icon-label">Organize</div>
+  </div>
+</div>
+
+<!-- ========== SCREENS ========== -->
+<h2>Screen Mockups</h2>
+<p style="font-size:13px;color:#888;margin-bottom:24px;">375px mobile width. Proper phone frames.</p>
+
+<!-- TODAY SCREEN -->
+<h3>Screen 1 — Today</h3>
+<div class="phone-row">
+  <div class="phone-container">
+    <div class="phone-label">Today — Main View</div>
+    <div class="phone">
+      <div class="phone-screen" style="background:#0F0F15;position:relative;min-height:700px;">
+        <!-- Top app bar -->
+        <div style="padding:20px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:12px;color:#666680;font-weight:500;">Monday, April 6</div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:26px;font-weight:800;color:#fff;margin-top:2px;">Today</div>
+          </div>
+          <div style="width:44px;height:44px;border-radius:12px;background:#1A1A2E;display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="2" y="11" width="4.5" height="9" rx="1.2" fill="#A855F7"></rect>
+              <rect x="8.75" y="7" width="4.5" height="13" rx="1.2" fill="#A855F7"></rect>
+              <rect x="15.5" y="2" width="4.5" height="18" rx="1.2" fill="#A855F7"></rect>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div style="padding:12px 20px 8px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span style="font-size:12px;color:#666680;">Daily progress</span>
+            <span style="font-size:12px;color:#A855F7;font-weight:600;">5 / 7</span>
+          </div>
+          <div style="height:5px;background:#1A1A2E;border-radius:3px;overflow:hidden;">
+            <div style="width:71%;height:100%;background:#6C63FF;border-radius:3px;"></div>
+          </div>
+        </div>
+
+        <!-- Habit list -->
+        <div style="padding:8px 20px 100px;display:flex;flex-direction:column;gap:10px;">
+          <!-- Completed -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:42px;height:42px;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M7 21L12 5l3 8 3-8 5 16" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div style="flex:1;text-align:left;">
+              <div style="font-weight:600;color:#fff;font-size:14px;">Morning Run</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:3px;">
+                <svg width="11" height="11" viewBox="0 0 12 12"><path d="M6 1L7.5 4 11 4.5 8.5 7 9 10.5 6 9 3 10.5 3.5 7 1 4.5 4.5 4z" fill="#F59E0B"></path></svg>
+                <span style="font-size:11px;color:#F59E0B;font-weight:500;">12 day streak</span>
+              </div>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;background:#34D399;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7L6 10 11 4" stroke="#0F0F15" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+          </div>
+
+          <!-- Completed -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:42px;height:42px;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="2.5" stroke="#A855F7" stroke-width="2"></rect><line x1="9" y1="9" x2="19" y2="9" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="13" x2="19" y2="13" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="17" x2="15" y2="17" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+            </div>
+            <div style="flex:1;text-align:left;">
+              <div style="font-weight:600;color:#fff;font-size:14px;">Read 30min</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:3px;">
+                <svg width="11" height="11" viewBox="0 0 12 12"><path d="M6 1L7.5 4 11 4.5 8.5 7 9 10.5 6 9 3 10.5 3.5 7 1 4.5 4.5 4z" fill="#F59E0B"></path></svg>
+                <span style="font-size:11px;color:#F59E0B;font-weight:500;">5 day streak</span>
+              </div>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;background:#34D399;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7L6 10 11 4" stroke="#0F0F15" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+          </div>
+
+          <!-- Not done -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:42px;height:42px;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 4c0 0-7 7-7 12a7 7 0 0014 0c0-5-7-12-7-12z" stroke="#A855F7" stroke-width="2"></path></svg>
+            </div>
+            <div style="flex:1;text-align:left;">
+              <div style="font-weight:600;color:#fff;font-size:14px;">Drink Water</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:3px;">
+                <svg width="11" height="11" viewBox="0 0 12 12"><path d="M6 1L7.5 4 11 4.5 8.5 7 9 10.5 6 9 3 10.5 3.5 7 1 4.5 4.5 4z" fill="#F59E0B"></path></svg>
+                <span style="font-size:11px;color:#F59E0B;font-weight:500;">3 day streak</span>
+              </div>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;border:2px solid #333350;"></div>
+          </div>
+
+          <!-- Not done, no streak -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:42px;height:42px;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#A855F7" stroke-width="2"></circle><circle cx="14" cy="14" r="3" fill="#A855F7"></circle></svg>
+            </div>
+            <div style="flex:1;text-align:left;">
+              <div style="font-weight:600;color:#fff;font-size:14px;">Meditate</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:3px;">
+                <span style="font-size:11px;color:#666680;">No streak yet</span>
+              </div>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;border:2px solid #333350;"></div>
+          </div>
+
+          <!-- Not done -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:42px;height:42px;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="#A855F7" stroke-width="2"></rect><line x1="4" y1="12" x2="24" y2="12" stroke="#A855F7" stroke-width="1.5"></line><rect x="8" y="15" width="5" height="3" rx="1" stroke="#A855F7" stroke-width="1.2"></rect></svg>
+            </div>
+            <div style="flex:1;text-align:left;">
+              <div style="font-weight:600;color:#fff;font-size:14px;">Code 1hr</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:3px;">
+                <svg width="11" height="11" viewBox="0 0 12 12"><path d="M6 1L7.5 4 11 4.5 8.5 7 9 10.5 6 9 3 10.5 3.5 7 1 4.5 4.5 4z" fill="#F59E0B"></path></svg>
+                <span style="font-size:11px;color:#F59E0B;font-weight:500;">8 day streak</span>
+              </div>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;border:2px solid #333350;"></div>
+          </div>
+        </div>
+
+        <!-- FAB — fixed to bottom-right of phone frame -->
+        <div style="position:absolute;bottom:20px;right:20px;width:56px;height:56px;border-radius:16px;background:#6C63FF;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2.5" stroke-linecap="round"></line><line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"></line></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE variant -->
+  <div class="phone-container">
+    <div class="phone-label">Today — Empty State</div>
+    <div class="phone">
+      <div class="phone-screen" style="background:#0F0F15;position:relative;min-height:700px;">
+        <!-- Top app bar -->
+        <div style="padding:20px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:12px;color:#666680;font-weight:500;">Monday, April 6</div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:26px;font-weight:800;color:#fff;margin-top:2px;">Today</div>
+          </div>
+          <div style="width:44px;height:44px;border-radius:12px;background:#1A1A2E;display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="2" y="11" width="4.5" height="9" rx="1.2" fill="#A855F7"></rect>
+              <rect x="8.75" y="7" width="4.5" height="13" rx="1.2" fill="#A855F7"></rect>
+              <rect x="15.5" y="2" width="4.5" height="18" rx="1.2" fill="#A855F7"></rect>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Empty state content -->
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:520px;padding:0 40px;text-align:center;">
+          <div style="font-size:16px;font-weight:600;color:#B0B0C0;margin-bottom:8px;">No habits yet</div>
+          <div style="font-size:13px;color:#666680;line-height:1.5;">Tap + to add your first habit</div>
+        </div>
+
+        <!-- FAB — fixed to bottom-right of phone frame -->
+        <div style="position:absolute;bottom:20px;right:20px;width:56px;height:56px;border-radius:16px;background:#6C63FF;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2.5" stroke-linecap="round"></line><line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"></line></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS SCREEN -->
+<h3>Screen 2 — Stats</h3>
+<div class="phone-row">
+  <div class="phone-container">
+    <div class="phone-label">Statistics</div>
+    <div class="phone">
+      <div class="phone-screen" style="background:#0F0F15;">
+        <!-- Top bar -->
+        <div style="padding:20px;display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;border-radius:12px;background:#1A1A2E;display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 4L7 10 13 16" stroke="#e0e0e0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:22px;font-weight:800;color:#fff;">Statistics</div>
+        </div>
+
+        <!-- Summary cards -->
+        <div style="padding:0 20px 12px;display:flex;gap:10px;">
+          <div style="flex:1;background:#1A1A2E;border-radius:14px;padding:16px 12px;text-align:left;">
+            <div style="font-size:10px;color:#666680;font-weight:500;">This Week</div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:26px;font-weight:800;color:#A855F7;margin-top:4px;">87%</div>
+          </div>
+          <div style="flex:1;background:#1A1A2E;border-radius:14px;padding:16px 12px;text-align:left;">
+            <div style="font-size:10px;color:#666680;font-weight:500;">Best Streak</div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:26px;font-weight:800;color:#34D399;margin-top:4px;">12</div>
+          </div>
+          <div style="flex:1;background:#1A1A2E;border-radius:14px;padding:16px 12px;text-align:left;">
+            <div style="font-size:10px;color:#666680;font-weight:500;">Active</div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:26px;font-weight:800;color:#F472B6;margin-top:4px;">7</div>
+          </div>
+        </div>
+
+        <!-- Heatmap -->
+        <div style="padding:12px 20px;">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:10px;">Activity</div>
+          <div style="background:#1A1A2E;border-radius:14px;padding:16px;">
+            <!-- Day labels -->
+            <div style="display:flex;gap:4px;margin-bottom:6px;margin-left:32px;max-width:252px;">
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">M</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">T</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">W</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">T</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">F</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">S</div>
+              <div style="width:32px;font-size:9px;color:#666680;text-align:center;">S</div>
+            </div>
+            <!-- Grid rows — fixed 32px squares -->
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <div style="display:flex;align-items:center;gap:4px;">
+                <div style="width:28px;font-size:9px;color:#666680;text-align:right;padding-right:4px;">W1</div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.9;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.6;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.4;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.9;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#252540;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.3;"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <div style="width:28px;font-size:9px;color:#666680;text-align:right;padding-right:4px;">W2</div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.7;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.5;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#252540;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.8;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.6;"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <div style="width:28px;font-size:9px;color:#666680;text-align:right;padding-right:4px;">W3</div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.3;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.7;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.9;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.5;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#252540;"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <div style="width:28px;font-size:9px;color:#666680;text-align:right;padding-right:4px;">W4</div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.8;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:1;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;opacity:0.6;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#A855F7;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#6C63FF;border:2px solid #A855F7;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#1A1A2E;border:1px dashed #333350;"></div>
+                <div style="width:32px;height:32px;border-radius:6px;background:#1A1A2E;border:1px dashed #333350;"></div>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div style="display:flex;align-items:center;gap:5px;margin-top:10px;justify-content:flex-end;">
+              <span style="font-size:9px;color:#666680;">Less</span>
+              <div style="width:14px;height:14px;border-radius:3px;background:#252540;"></div>
+              <div style="width:14px;height:14px;border-radius:3px;background:#6C63FF;opacity:0.3;"></div>
+              <div style="width:14px;height:14px;border-radius:3px;background:#6C63FF;opacity:0.6;"></div>
+              <div style="width:14px;height:14px;border-radius:3px;background:#6C63FF;opacity:0.85;"></div>
+              <div style="width:14px;height:14px;border-radius:3px;background:#6C63FF;"></div>
+              <span style="font-size:9px;color:#666680;">More</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per-habit streaks -->
+        <div style="padding:8px 20px 24px;">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:10px;">Streaks</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#1A1A2E;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:10px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 28 28" fill="none"><path d="M7 21L12 5l3 8 3-8 5 16" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div style="flex:1;font-size:13px;font-weight:600;color:#fff;">Morning Run</div>
+              <div style="text-align:right;">
+                <div style="font-size:16px;font-weight:700;color:#34D399;">12</div>
+                <div style="font-size:10px;color:#666680;">Best: 18</div>
+              </div>
+            </div>
+            <div style="background:#1A1A2E;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:10px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="2.5" stroke="#A855F7" stroke-width="2"></rect><line x1="9" y1="9" x2="19" y2="9" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="13" x2="19" y2="13" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+              </div>
+              <div style="flex:1;font-size:13px;font-weight:600;color:#fff;">Read 30min</div>
+              <div style="text-align:right;">
+                <div style="font-size:16px;font-weight:700;color:#34D399;">5</div>
+                <div style="font-size:10px;color:#666680;">Best: 21</div>
+              </div>
+            </div>
+            <div style="background:#1A1A2E;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:10px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 28 28" fill="none"><path d="M14 4c0 0-7 7-7 12a7 7 0 0014 0c0-5-7-12-7-12z" stroke="#A855F7" stroke-width="2"></path></svg>
+              </div>
+              <div style="flex:1;font-size:13px;font-weight:600;color:#fff;">Drink Water</div>
+              <div style="text-align:right;">
+                <div style="font-size:16px;font-weight:700;color:#34D399;">3</div>
+                <div style="font-size:10px;color:#666680;">Best: 9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CREATE / EDIT SCREENS -->
+<h3>Screen 3 — Create &amp; Edit Variants</h3>
+<div class="phone-row">
+  <!-- CREATE variant -->
+  <div class="phone-container">
+    <div class="phone-label">Create — New Habit</div>
+    <div class="phone">
+      <div class="phone-screen" style="background:#0F0F15;">
+        <div style="padding:20px;">
+          <!-- Top bar -->
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+            <div style="width:40px;height:40px;border-radius:12px;background:#1A1A2E;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 4L7 10 13 16" stroke="#e0e0e0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:22px;font-weight:800;color:#fff;">New Habit</div>
+          </div>
+
+          <!-- Icon picker area -->
+          <div style="text-align:left;margin-bottom:24px;display:flex;align-items:center;gap:14px;">
+            <div style="width:72px;height:72px;border-radius:20px;background:#1A1A2E;border:2px dashed #6C63FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 21L12 5l3 8 3-8 5 16" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div style="font-size:11px;color:#6C63FF;font-weight:500;">Tap to change icon</div>
+          </div>
+
+          <!-- Icon selection grid — all 20 icons -->
+          <div style="background:#1A1A2E;border-radius:14px;padding:14px;margin-bottom:24px;">
+            <div style="font-size:11px;color:#666680;text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:10px;text-align:left;">Choose icon</div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+              <!-- 1. Run (selected) -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#6C63FF;display:flex;align-items:center;justify-content:center;border:2px solid #8B7BFF;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M7 21L12 5l3 8 3-8 5 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <!-- 2. Read -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="2.5" stroke="#A855F7" stroke-width="2"></rect><line x1="9" y1="9" x2="19" y2="9" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="13" x2="19" y2="13" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="9" y1="17" x2="15" y2="17" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 3. Water -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 4c0 0-7 7-7 12a7 7 0 0014 0c0-5-7-12-7-12z" stroke="#A855F7" stroke-width="2"></path></svg>
+              </div>
+              <!-- 4. Meditate -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#A855F7" stroke-width="2"></circle><circle cx="14" cy="14" r="3" fill="#A855F7"></circle></svg>
+              </div>
+              <!-- 5. Sleep -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="12" r="7" stroke="#A855F7" stroke-width="2"></circle><path d="M14 5v7l4 3" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M8 22h12" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path></svg>
+              </div>
+              <!-- 6. Code -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="#A855F7" stroke-width="2"></rect><line x1="4" y1="12" x2="24" y2="12" stroke="#A855F7" stroke-width="1.5"></line><rect x="8" y="15" width="5" height="3" rx="1" stroke="#A855F7" stroke-width="1.2"></rect></svg>
+              </div>
+              <!-- 7. Music -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="9" cy="19" r="4" stroke="#A855F7" stroke-width="2"></circle><circle cx="19" cy="17" r="4" stroke="#A855F7" stroke-width="2"></circle><path d="M13 19V7l10-2v12" stroke="#A855F7" stroke-width="2"></path></svg>
+              </div>
+              <!-- 8. Cook -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M8 22V12l6-6 6 6v10" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="11" y="16" width="6" height="6" rx="1" stroke="#A855F7" stroke-width="1.5"></rect></svg>
+              </div>
+              <!-- 9. Journal -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M6 22L6 8c0-1.1.9-2 2-2h12a2 2 0 012 2v14" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><line x1="10" y1="10" x2="18" y2="10" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line><line x1="10" y1="14" x2="16" y2="14" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 10. Gym -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="9" y="4" width="10" height="6" rx="1.5" stroke="#A855F7" stroke-width="2"></rect><line x1="14" y1="10" x2="14" y2="16" stroke="#A855F7" stroke-width="2.5"></line><line x1="8" y1="16" x2="20" y2="16" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="10" y1="16" x2="8" y2="23" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="18" y1="16" x2="20" y2="23" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 11. Yoga -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="6" stroke="#A855F7" stroke-width="2"></circle><path d="M8 22c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path></svg>
+              </div>
+              <!-- 12. Walk -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M6 20L14 6l8 14" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><line x1="9" y1="16" x2="19" y2="16" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 13. Cycle -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="18" r="6" stroke="#A855F7" stroke-width="2"></circle><circle cx="14" cy="18" r="2" fill="#A855F7"></circle><line x1="14" y1="12" x2="14" y2="6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line><line x1="11" y1="7" x2="17" y2="5" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 14. Study -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M5 7h18v2H5z" fill="#A855F7"></path><rect x="5" y="9" width="18" height="14" rx="1.5" stroke="#A855F7" stroke-width="2"></rect><line x1="10" y1="14" x2="10" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="14" y1="14" x2="14" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="18" y1="14" x2="18" y2="14.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="10" y1="19" x2="10" y2="19.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line><line x1="14" y1="19" x2="14" y2="19.01" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round"></line></svg>
+              </div>
+              <!-- 15. No Phone -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="6" y="10" width="16" height="12" rx="2" stroke="#A855F7" stroke-width="2"></rect><path d="M10 10V8a4 4 0 018 0v2" stroke="#A855F7" stroke-width="2"></path><circle cx="14" cy="16" r="2" fill="#A855F7"></circle></svg>
+              </div>
+              <!-- 16. Vitamins -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="12" r="4" stroke="#A855F7" stroke-width="2"></circle><path d="M14 16v6" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M10 24h8" stroke="#A855F7" stroke-width="2" stroke-linecap="round"></path><path d="M7 8l2 2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path><path d="M21 8l-2 2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path><path d="M14 4v2" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round"></path></svg>
+              </div>
+              <!-- 17. Language -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 5C8 5 4 10 4 14s4 9 10 9 10-5 10-9S20 5 14 5z" stroke="#A855F7" stroke-width="2"></path><path d="M14 5c-2 3-3 6-3 9s1 6 3 9" stroke="#A855F7" stroke-width="1.5"></path><path d="M14 5c2 3 3 6 3 9s-1 6-3 9" stroke="#A855F7" stroke-width="1.5"></path><line x1="5" y1="14" x2="23" y2="14" stroke="#A855F7" stroke-width="1.5"></line></svg>
+              </div>
+              <!-- 18. Gratitude -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 6l2.5 5 5.5.8-4 3.9.9 5.3-4.9-2.6-4.9 2.6.9-5.3-4-3.9 5.5-.8z" stroke="#A855F7" stroke-width="2" stroke-linejoin="round"></path></svg>
+              </div>
+              <!-- 19. Health -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 24s-8-4.5-8-11V7l8-3 8 3v6c0 6.5-8 11-8 11z" stroke="#A855F7" stroke-width="2" stroke-linejoin="round"></path></svg>
+              </div>
+              <!-- 20. Organize -->
+              <div style="aspect-ratio:1;border-radius:12px;background:#252540;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="15" y="4" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="4" y="15" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect><rect x="15" y="15" width="9" height="9" rx="2" stroke="#A855F7" stroke-width="2"></rect></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Name field -->
+          <div style="margin-bottom:22px;">
+            <div style="font-size:11px;color:#666680;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Name</div>
+            <div style="background:#1A1A2E;border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;border:1px solid #333350;">Morning Run</div>
+          </div>
+
+          <!-- Day picker — surface elevated + primary border, NOT gradient -->
+          <div style="margin-bottom:32px;">
+            <div style="font-size:11px;color:#666680;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Repeat on</div>
+            <div style="display:flex;gap:8px;">
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">M</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">T</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">W</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">T</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">F</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#1A1A2E;color:#666680;font-size:13px;font-weight:600;border:1px solid #333350;">S</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#1A1A2E;color:#666680;font-size:13px;font-weight:600;border:1px solid #333350;">S</div>
+            </div>
+          </div>
+
+          <!-- CTA — solid primary, clearly dominant -->
+          <div style="background:#6C63FF;border-radius:14px;padding:16px;text-align:center;font-weight:700;color:#fff;font-size:16px;">
+            Save Habit
+          </div>
+
+          <!-- Discard for create mode -->
+          <div style="text-align:center;margin-top:16px;font-size:13px;color:#EF4444;font-weight:500;">
+            Discard Habit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT variant -->
+  <div class="phone-container">
+    <div class="phone-label">Edit — Existing Habit</div>
+    <div class="phone">
+      <div class="phone-screen" style="background:#0F0F15;">
+        <div style="padding:20px;">
+          <!-- Top bar -->
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+            <div style="width:40px;height:40px;border-radius:12px;background:#1A1A2E;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 4L7 10 13 16" stroke="#e0e0e0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div style="font-family:&#39;Manrope&#39;,sans-serif;font-size:22px;font-weight:800;color:#fff;">Edit Habit</div>
+          </div>
+
+          <!-- Selected icon -->
+          <div style="text-align:left;margin-bottom:24px;display:flex;align-items:center;gap:14px;">
+            <div style="width:72px;height:72px;border-radius:20px;background:#1A1A2E;border:2px solid #6C63FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c0 0-7 7-7 12a7 7 0 0014 0c0-5-7-12-7-12z" stroke="#6C63FF" stroke-width="2"></path></svg>
+            </div>
+            <div style="font-size:11px;color:#6C63FF;font-weight:500;">Tap to change icon</div>
+          </div>
+
+          <!-- Icon grid collapsed (not shown in edit, just the selected icon) -->
+
+          <!-- Name field -->
+          <div style="margin-bottom:22px;">
+            <div style="font-size:11px;color:#666680;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Name</div>
+            <div style="background:#1A1A2E;border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;border:1px solid #333350;">Drink Water</div>
+          </div>
+
+          <!-- Day picker -->
+          <div style="margin-bottom:32px;">
+            <div style="font-size:11px;color:#666680;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Repeat on</div>
+            <div style="display:flex;gap:8px;">
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">M</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">T</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">W</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">T</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">F</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">S</div>
+              <div style="flex:1;text-align:center;padding:10px 0;border-radius:10px;background:#2E2E4A;color:#A855F7;font-size:13px;font-weight:600;border:1.5px solid #6C63FF;">S</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div style="background:#6C63FF;border-radius:14px;padding:16px;text-align:center;font-weight:700;color:#fff;font-size:16px;">
+            Save Changes
+          </div>
+
+          <!-- Delete for edit mode -->
+          <div style="text-align:center;margin-top:16px;font-size:13px;color:#EF4444;font-weight:500;">
+            Delete Habit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+(function() {
+  const WS_URL = 'ws://' + window.location.host;
+  let ws = null;
+  let eventQueue = [];
+
+  function connect() {
+    ws = new WebSocket(WS_URL);
+
+    ws.onopen = () => {
+      eventQueue.forEach(e => ws.send(JSON.stringify(e)));
+      eventQueue = [];
+    };
+
+    ws.onmessage = (msg) => {
+      const data = JSON.parse(msg.data);
+      if (data.type === 'reload') {
+        window.location.reload();
+      }
+    };
+
+    ws.onclose = () => {
+      setTimeout(connect, 1000);
+    };
+  }
+
+  function sendEvent(event) {
+    event.timestamp = Date.now();
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify(event));
+    } else {
+      eventQueue.push(event);
+    }
+  }
+
+  // Capture clicks on choice elements
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-choice]');
+    if (!target) return;
+
+    sendEvent({
+      type: 'click',
+      text: target.textContent.trim(),
+      choice: target.dataset.choice,
+      id: target.id || null
+    });
+
+    // Update indicator bar (defer so toggleSelect runs first)
+    setTimeout(() => {
+      const indicator = document.getElementById('indicator-text');
+      if (!indicator) return;
+      const container = target.closest('.options') || target.closest('.cards');
+      const selected = container ? container.querySelectorAll('.selected') : [];
+      if (selected.length === 0) {
+        indicator.textContent = 'Click an option above, then return to the terminal';
+      } else if (selected.length === 1) {
+        const label = selected[0].querySelector('h3, .content h3, .card-body h3')?.textContent?.trim() || selected[0].dataset.choice;
+        indicator.innerHTML = '<span class="selected-text">' + label + ' selected</span> — return to terminal to continue';
+      } else {
+        indicator.innerHTML = '<span class="selected-text">' + selected.length + ' selected</span> — return to terminal to continue';
+      }
+    }, 0);
+  });
+
+  // Frame UI: selection tracking
+  window.selectedChoice = null;
+
+  window.toggleSelect = function(el) {
+    const container = el.closest('.options') || el.closest('.cards');
+    const multi = container && container.dataset.multiselect !== undefined;
+    if (container && !multi) {
+      container.querySelectorAll('.option, .card').forEach(o => o.classList.remove('selected'));
+    }
+    if (multi) {
+      el.classList.toggle('selected');
+    } else {
+      el.classList.add('selected');
+    }
+    window.selectedChoice = el.dataset.choice;
+  };
+
+  // Expose API for explicit use
+  window.brainstorm = {
+    send: sendEvent,
+    choice: (value, metadata = {}) => sendEvent({ type: 'choice', value, ...metadata })
+  };
+
+  connect();
+})();
+
+</script>
+
+
+<div class="glasp-ui-wrapper" id="glasp-ui-wrapper" style="height: 0px; width: 0px; padding: 0px;"><iframe name="glasp-tooltip-iframe" id="glasp-tooltip-iframe" style="display: none; max-width: 232px;" src="./Habit Tracker — Design System &amp; Screens_files/saved_resource.html"></iframe><iframe name="glasp-sidebar-iframe" id="glasp-sidebar-iframe" style="display: none !important;width: 0px !important; min-width: 0px !important; max-width: 320px; height: 100%; background: transparent; margin: auto; position: fixed; top: 0px; right: 0px; left: auto; z-index: 9000000000000000000;border: none !important;" src="./Habit Tracker — Design System &amp; Screens_files/saved_resource(1).html"></iframe></div><div id="yt_article_summary_widget_wrapper" class="yt_article_summary_widget_wrapper" style="display: none; margin: auto; width: fit-content; padding: 0px; border-radius: 100%;">
+        <div id="yt_article_summary_widget" class="yt_article_summary_widget"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.40123 27.3686C-0.44103 25.5284 -0.441033 22.5449 1.4012 20.7047L16.5971 5.52573L24.0098 12.9301L5.47818 31.4409L1.40123 27.3686Z" fill="#FF4E74"></path>
+        <path d="M35.1286 24.0367L16.5972 5.5258L20.6741 1.45341C22.5164 -0.386772 25.5033 -0.386775 27.3455 1.45341L42.5415 16.6323L35.1286 24.0367Z" fill="#FFF85E"></path>
+        <path d="M24.0099 35.143L42.5416 16.6323L46.6183 20.7046C48.4606 22.5448 48.4606 25.5284 46.6183 27.3686L31.4224 42.5476L24.0099 35.143Z" fill="#76FF54"></path>
+        <path d="M27.3454 46.6198C25.5032 48.4601 22.5163 48.4601 20.674 46.6198L5.47815 31.4409L12.8908 24.0366L31.4223 42.5476L27.3454 46.6198Z" fill="#5C94FF"></path>
+    </svg></div>
+        <div id="yt_article_summary_close_button" class="yt_article_summary_close_button">×</div>
+    </div><div id="glasp-extension-toast-container" style="position: fixed; top: 32px; right: 16px; z-index: 2147483647; display: none; flex-direction: column; align-items: flex-end; height: 0px; width: auto; margin: 0px; padding: 0px;"></div></body></html>
