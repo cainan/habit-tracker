@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Book outline: rect(5,3,18,22,rx=2.5) -->
+    <path
+        android:pathData="M7.5,3 h13 a2.5,2.5,0,0,1,2.5,2.5 v17 a2.5,2.5,0,0,1,-2.5,2.5 h-13 a2.5,2.5,0,0,1,-2.5,-2.5 v-17 a2.5,2.5,0,0,1,2.5,-2.5 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Lines -->
+    <path
+        android:pathData="M9,9 L19,9"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M9,13 L19,13"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M9,17 L15,17"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+</vector>

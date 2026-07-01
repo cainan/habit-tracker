@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Sun circle: circle(14,12,4) -->
+    <path
+        android:pathData="M10,12 A4,4,0,1,0,18,12 A4,4,0,1,0,10,12 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Stem down -->
+    <path
+        android:pathData="M14,16 v6"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <!-- Base -->
+    <path
+        android:pathData="M10,24 h8"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <!-- Ray left -->
+    <path
+        android:pathData="M7,8 l2,2"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+    <!-- Ray right -->
+    <path
+        android:pathData="M21,8 l-2,2"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+    <!-- Ray top -->
+    <path
+        android:pathData="M14,4 v2"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"/>
+</vector>

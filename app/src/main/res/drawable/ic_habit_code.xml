@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Laptop body: rect(4,8,20,14,rx=2) -->
+    <path
+        android:pathData="M6,8 h16 a2,2,0,0,1,2,2 v10 a2,2,0,0,1,-2,2 h-16 a2,2,0,0,1,-2,-2 v-10 a2,2,0,0,1,2,-2 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Screen divider line -->
+    <path
+        android:pathData="M4,12 L24,12"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.5"/>
+    <!-- Keyboard area: rect(8,15,5,3,rx=1) -->
+    <path
+        android:pathData="M9,15 h3 a1,1,0,0,1,1,1 v1 a1,1,0,0,1,-1,1 h-3 a1,1,0,0,1,-1,-1 v-1 a1,1,0,0,1,1,-1 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.2"/>
+</vector>

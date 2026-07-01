@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Weight bar: rect(9,4,10,6,rx=1.5) -->
+    <path
+        android:pathData="M10.5,4 h7 a1.5,1.5,0,0,1,1.5,1.5 v3 a1.5,1.5,0,0,1,-1.5,1.5 h-7 a1.5,1.5,0,0,1,-1.5,-1.5 v-3 a1.5,1.5,0,0,1,1.5,-1.5 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Vertical pole -->
+    <path
+        android:pathData="M14,10 L14,16"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2.5"/>
+    <!-- Horizontal bar -->
+    <path
+        android:pathData="M8,16 L20,16"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <!-- Left leg -->
+    <path
+        android:pathData="M10,16 L8,23"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <!-- Right leg -->
+    <path
+        android:pathData="M18,16 L20,23"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+</vector>

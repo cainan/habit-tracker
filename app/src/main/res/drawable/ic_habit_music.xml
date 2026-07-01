@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Left note circle: circle(9,19,4) -->
+    <path
+        android:pathData="M5,19 A4,4,0,1,0,13,19 A4,4,0,1,0,5,19 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Right note circle: circle(19,17,4) -->
+    <path
+        android:pathData="M15,17 A4,4,0,1,0,23,17 A4,4,0,1,0,15,17 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+    <!-- Staff line -->
+    <path
+        android:pathData="M13,19 V7 l10,-2 v12"
+        android:fillColor="#00000000"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2"/>
+</vector>
